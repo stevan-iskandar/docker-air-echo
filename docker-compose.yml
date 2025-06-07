@@ -1,0 +1,12 @@
+services:
+  docker-air-echo:
+    container_name: docker-air-echo
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.development
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/app
+      - /go/pkg/mod
+    restart: unless-stopped

@@ -1,0 +1,18 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  bin = "tmp/main"
+  cmd = "go build -o tmp/main server.go"
+  exclude_dir = ["vendor", "tmp", ".git", "docker"]
+  include_ext = ["go", "html", "tpl", "tmpl"]
+  delay = 0
+  poll = true
+
+[log]
+  level = "debug"
+  time = false
+
+[color]
+  main = "magenta"
+  watcher = "cyan"
